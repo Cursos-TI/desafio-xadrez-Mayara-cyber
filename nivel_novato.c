@@ -1,76 +1,56 @@
 #include <stdio.h>
 
-/*
- * ARQUIVO: xadrez.c
- * DESAFIO: Simulação do Movimento de Peças de Xadrez
- * * Este programa simula o movimento de três peças de xadrez (Torre, Bispo e Rainha)
- * utilizando uma estrutura de repetição diferente para cada simulação.
- */
-
 int main() {
-    // --- Simulação 1: Movimento da TORRE (Usando 'for') ---
     
-    // A Torre deve mover-se 5 casas para a direita.
+    // TORRE (usando for)
+    
     const int casas_torre = 5;
     
-    printf("==========================================\n");
-    printf("1. SIMULACAO DO MOVIMENTO DA TORRE (FOR)\n");
-    printf("Movimento: 5 casas para a DIREITA\n");
-    printf("==========================================\n");
-
-    // Loop 'for' para repetir o movimento o número de casas desejado
+    printf("--- MOVIMENTO DA TORRE (FOR) ---\n");
+    
     for (int i = 1; i <= casas_torre; i++) {
-        // Imprime a direção a cada casa percorrida
         printf("Casa %d: Direita\n", i);
     }
     
-    // -----------------------------------------------------------------
+    printf("Torre concluiu o movimento de %d casas para a direita.\n", casas_torre);
+    printf("\n");
 
-    // --- Simulação 2: Movimento da RAINHA (Usando 'while') ---
     
-    // A Rainha deve mover-se 8 casas para a esquerda.
-    const int casas_rainha = 8;
-    int contador_rainha = 1; // Contador para a repetição 'while'
+    // BISPO (usando while)
     
-    printf("\n==========================================\n");
-    printf("2. SIMULACAO DO MOVIMENTO DA RAINHA (WHILE)\n");
-    printf("Movimento: 8 casas para a ESQUERDA\n");
-    printf("==========================================\n");
-
-    // Loop 'while' continua enquanto o contador for menor ou igual ao total de casas
-    while (contador_rainha <= casas_rainha) {
-        // Imprime a direção a cada casa percorrida
-        printf("Casa %d: Esquerda\n", contador_rainha);
+    const int casas_bispo = 5;
+    int contador_bispo = 0;
+    
+    printf("--- MOVIMENTO DO BISPO (WHILE) ---\n");
+    
+    while (contador_bispo < casas_bispo) {
         
-        // Incrementa o contador para a próxima iteração
-        contador_rainha++;
+        contador_bispo++; 
+        
+        printf("Casa %d: Cima, Direita\n", contador_bispo);
     }
     
-    // -----------------------------------------------------------------
+    printf("Bispo concluiu o movimento de %d casas na diagonal.\n", casas_bispo);
+    printf("\n");
 
-    // --- Simulação 3: Movimento do BISPO (Usando 'do-while') ---
     
-    // O Bispo deve mover-se 5 casas na diagonal para cima e à direita.
-    const int casas_bispo = 5;
-    int contador_bispo = 1; // Contador para a repetição 'do-while'
+    // RAINHA (usando do-while)
     
-    printf("\n==========================================\n");
-    printf("3. SIMULACAO DO MOVIMENTO DO BISPO (DO-WHILE)\n");
-    printf("Movimento: 5 casas na diagonal (Cima, Direita)\n");
-    printf("==========================================\n");
+    const int casas_rainha = 8;
+    int contador_rainha = 0;
+    
+    printf("--- MOVIMENTO DA RAINHA (DO-WHILE) ---\n");
 
-    // O loop 'do-while' garante que o bloco de código seja executado pelo menos uma vez
     do {
-        // Imprime a combinação de duas direções para representar a diagonal
-        printf("Casa %d: Cima, Direita\n", contador_bispo);
         
-        // Incrementa o contador para a próxima iteração
-        contador_bispo++;
+        contador_rainha++; 
         
-    } while (contador_bispo <= casas_bispo); 
-    // A condição é verificada no final do loop
+        printf("Casa %d: Esquerda\n", contador_rainha);
+        
+    } while (contador_rainha < casas_rainha);
     
-    printf("\n--- Fim da Simulação ---\n");
+    printf("Rainha concluiu o movimento de %d casas para a esquerda.\n", casas_rainha);
+    printf("\n");
     
     return 0;
 }
