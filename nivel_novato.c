@@ -52,5 +52,25 @@ int main() {
     printf("Rainha concluiu o movimento de %d casas para a esquerda.\n", casas_rainha);
     printf("\n");
     
+    // CAVALO (usando for aninhado com while)
+    
+    const int casas_vertical = 2;
+    const int casas_horizontal = 1;
+    
+    printf("--- MOVIMENTO DO CAVALO (LOOPS ANINHADOS) ---\n");
+    
+    for (int i = 1; i <= casas_vertical; i++) {
+        printf("Passo %d: Baixo\n", i);
+    }
+    
+    int j = 0;
+    while (j < casas_horizontal) {
+        j++;
+        printf("Passo 3: Esquerda\n");
+    }
+    
+    printf("Cavalo concluiu o movimento em 'L'.\n");
+    printf("\n");
+    
     return 0;
 }
